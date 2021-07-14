@@ -1,0 +1,6 @@
+version: '3.4'
+
+services:
+  aircraft.tasks.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
