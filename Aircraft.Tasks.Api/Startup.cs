@@ -26,7 +26,8 @@ namespace Aircraft.Tasks.Api
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<TaskDtoValidator>())
                 ;
 
-            services.AddTaskServices();
+            services.AddTaskServices()
+                    .AddTaskQueueServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -2,10 +2,11 @@
 using System.Threading.Tasks;
 using Aircraft.Tasks.Core.Contracts.Requests;
 using Aircraft.Tasks.Core.Services;
+using Aircraft.Tasks.Internal.Private.Models;
 using MassTransit;
 using Microsoft.Extensions.Logging;
 
-namespace Aircraft.Tasks.Internal.Private.Services
+namespace Aircraft.Tasks.Worker.Consumers
 {
     internal class AirCraftTaskNextDueConsumer : IConsumer<TaskDueListRequestDto>
     {
@@ -24,6 +25,11 @@ namespace Aircraft.Tasks.Internal.Private.Services
         {
             logger.LogInformation($"Processing task list for aircraft id: {context.Message.AirCraftId}");
             var result = airCraftTaskService.CalculateDueDates(context.Message);
+            if(result == null)
+            {
+                await context.RespondAsync(new AircraftNotFound(context.Message.AirCraftId));
+                return;
+            }
             await context.RespondAsync(result);
         }
     }

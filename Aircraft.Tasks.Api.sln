@@ -9,9 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aircraft.Tasks.Core", "Airc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aircraft.Tasks.Internal", "Aircraft.Tasks.Internal\Aircraft.Tasks.Internal.csproj", "{F2CD7B13-10D7-475D-AD1B-A4262A058FF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirCraft.Tasks.Internal.Tests", "AirCraft.Tasks.Internal.Tests\AirCraft.Tasks.Internal.Tests.csproj", "{6C41534D-2C47-4810-B607-510C84758E75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aircraft.Tasks.Internal.Tests", "Aircraft.Tasks.Internal.Tests\Aircraft.Tasks.Internal.Tests.csproj", "{6C41534D-2C47-4810-B607-510C84758E75}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{807B8E29-DB53-4CAC-8B81-81648AA6FB28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aircraft.Tasks.Worker", "Aircraft.Tasks.Worker\Aircraft.Tasks.Worker.csproj", "{E71CCAA7-E0D2-4E58-BAC6-36F41A5A0262}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{807B8E29-DB53-4CAC-8B81-81648AA6FB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{807B8E29-DB53-4CAC-8B81-81648AA6FB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{807B8E29-DB53-4CAC-8B81-81648AA6FB28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E71CCAA7-E0D2-4E58-BAC6-36F41A5A0262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71CCAA7-E0D2-4E58-BAC6-36F41A5A0262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71CCAA7-E0D2-4E58-BAC6-36F41A5A0262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71CCAA7-E0D2-4E58-BAC6-36F41A5A0262}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

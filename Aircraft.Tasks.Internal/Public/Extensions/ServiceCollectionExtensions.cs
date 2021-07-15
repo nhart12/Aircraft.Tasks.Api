@@ -13,21 +13,24 @@ namespace Aircraft.Tasks.Internal.Public.Extensions
         {
             return services
                     .AddSingleton<IAirCraftTaskService, AirCraftTaskService>()
-                    .AddScoped<IAirCraftTaskQueueService, AirCraftTaskQueueService>()
                     .AddSingleton<IDateTimeProvider, DateTimeProvider>()
                     .AddSingleton<IAirCraftUtilizationRepository, AirCraftUtilizationRepository>()
-                    .AddMassTransit(x =>
-                    {
-                        x.AddConsumer<AirCraftTaskNextDueConsumer>();
-                        x.AddRequestClient<TaskDueListRequestDto>();
-                        x.UsingRabbitMq((context, cfg) =>
-                        {
-                            cfg.Host("rabbitmq");
-                            cfg.ConfigureEndpoints(context);
-                        });
-                    })
-                    .AddMassTransitHostedService(true);
                 ;
+        }
+
+        public static IServiceCollection AddTaskQueueServices(this IServiceCollection services)
+        {
+            return services
+                .AddScoped<IAirCraftTaskQueueService, AirCraftTaskQueueService>()
+                .AddMassTransit(x =>
+                {
+                    x.AddRequestClient<TaskDueListRequestDto>();
+                    x.UsingRabbitMq((context, cfg) =>
+                    {
+                        cfg.Host("rabbitmq");
+                    });
+                })
+                .AddMassTransitHostedService(true);
         }
     }
 }

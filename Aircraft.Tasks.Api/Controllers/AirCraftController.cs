@@ -4,8 +4,6 @@ using Aircraft.Tasks.Core.Contracts.Requests;
 using Aircraft.Tasks.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Aircraft.Tasks.Api.Controllers
 {
     [Route("api/[controller]")]

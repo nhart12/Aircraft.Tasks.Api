@@ -11,10 +11,10 @@ using Aircraft.Tasks.Core.Contracts.Requests;
 using FluentAssertions;
 using System.Linq;
 
-namespace AirCraft.Tasks.Internal.Tests
+namespace Aircraft.Tasks.Internal.Tests
 {
     [TestClass]
-    public class AirCraftTaskServiceTests
+    public class AircraftTaskServiceTests
     {
         private Mock<IDateTimeProvider> mockDateTimeProvider;
         private Mock<IAirCraftUtilizationRepository> mockAircraftUtilizationRepository;

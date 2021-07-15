@@ -8,7 +8,7 @@ services:
       - 15672:15672
 
   aircraft.tasks.api:
-    image: ${DOCKER_REGISTRY-}aircrafttasks
+    image: ${DOCKER_REGISTRY-}aircrafttasksapi
     build:
       context: .
       dockerfile: Aircraft.Tasks.Api/Dockerfile
@@ -16,3 +16,12 @@ services:
       - 5000:80
     depends_on:
       - rabbitmq
+
+  aircraft.tasks.worker:
+    image: ${DOCKER_REGISTRY-}aircrafttasksworker
+    build:
+      context: .
+      dockerfile: Aircraft.Tasks.Worker/Dockerfile
+    depends_on:
+      - rabbitmq
+
